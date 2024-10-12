@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    hikari:
+      connection-test-query: SELECT 1
+      minimum-idle: 1
+      maximum-pool-size: 10
+      auto-commit: false
+      connection-timeout: 30000
+    url: "jdbc:postgresql://0.0.0.0:5432/commerce"
+    username: postgres
+    password: 1234
+    type: com.zaxxer.hikari.HikariDataSource
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non-contextual_creation: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
